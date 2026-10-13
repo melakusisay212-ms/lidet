@@ -37,8 +37,8 @@ jobs:
       - name: Generate Android project
         run: npx cap add android
 
-      - name: Add reminder permissions to the Android manifest
-        run: node scripts/patch-android.cjs
+      - name: Prepare Android project (icons + reminder permissions + version)
+        run: node scripts/prepare-android.mjs
 
       - name: Sync web app into Android project
         run: npx cap sync android
